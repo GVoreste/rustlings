@@ -11,6 +11,22 @@
 // TODO: Write a function that calculates the price of an order of apples given
 // the quantity bought.
 // fn calculate_price_of_apples(???) -> ??? { ??? }
+// use std::cmp;
+
+const APPLE_COST: u32 = 2;
+const MAX_APPLES: u32 = 40;
+const DISCOUNT: u32 = 1;
+
+fn calculate_price_of_apples(n: u32) -> u32 {
+    match n {
+        _ if n>MAX_APPLES => (APPLE_COST-DISCOUNT)*n,
+        _ => APPLE_COST*n
+    }
+    // match n.cmp(&MAX_APPLES) {
+    //     cmp::Ordering::Greater => (APPLE_COST-DISCOUNT)*n,
+    //     _ => APPLE_COST*n
+    // }
+}
 
 fn main() {
     // You can optionally experiment here.
